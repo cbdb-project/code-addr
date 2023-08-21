@@ -1,0 +1,273 @@
+1	清	太倉			7524	partial_without_belong	太倉直隸州直轄地方	
+2	清	孝感			8213	excat_without_belong	孝感	
+3	清	孟津			8193	excat_without_belong	孟津	
+4	清	滄洲				unknown		
+5	清	烏程			7612	excat_without_belong	烏程	
+6	清	宛平			7214	excat_without_belong	宛平	
+7	清	益都			7978	excat_without_belong	益都	
+8	清	山西			7385	partial_without_belong	山西省	
+9	清	涇陽			8949	excat_without_belong	涇陽	
+10	清	宜興			7536	excat_without_belong	宜興	
+11	清	遂寧			8770	excat_without_belong	遂寧	
+12	清	睢州			8097	excat_without_belong	睢州	
+13	清	山陰			7686	excat_without_belong	山陰	
+14	清	閩縣			7770	excat_without_belong	閩縣	
+15	清	徐州			7590	partial_without_belong	徐州府	
+16	清	無錫			7534	excat_without_belong	無錫	
+17	清	吳江			7542	excat_without_belong	吳江	
+18	清	福州			7769	partial_without_belong	福州府	
+19	清	海寧			7604	partial_without_belong	海寧州	
+20	清	餘姚			7688	excat_without_belong	餘姚	
+21	清	華亭			7515	excat_without_belong	華亭	
+22	清	維揚				unknown		
+23	清	吳縣			7539	excat_without_belong	吳縣	
+24	清	松江			7514	partial_without_belong	松江府	
+25	清	廣東			8384	partial_without_belong	廣東省	
+26	清	湘潭			8300	excat_without_belong	湘潭	
+27	清	鄞縣			7628	excat_without_belong	鄞縣	
+28	清	黃州			8225	partial_without_belong	黃州府	
+29	清	靳縣				unknown		
+30	清	嘉興			7620	excat_without_belong	嘉興	
+31	清	桐城			7706	excat_without_belong	桐城	
+32	清	杞縣			8084	excat_without_belong	杞縣	
+33	清	曹州			8013	partial_without_belong	曹州府	
+34	清	膠州			8050	excat_without_belong	膠州	
+35	清	泰州			7572	excat_without_belong	泰州	
+36	清	北平				unknown		
+37	清	廣信			7873	partial_without_belong	廣信府	
+38	清	泰興			7568	excat_without_belong	泰興	
+39	清	涿州			7227	excat_without_belong	涿州	
+40	清	嘉善			7622	excat_without_belong	嘉善	
+41	清	潁州			7714	partial_without_belong	潁州府	
+42	清	杭州			7601	partial_without_belong	杭州府	
+43	清	溧陽			7554	excat_without_belong	溧陽	
+44	清	長洲			7540	excat_without_belong	長洲	
+45	清	祥符			8075	excat_without_belong	祥符	
+46	清	遂安			7664	excat_without_belong	遂安	
+47	清	常熟			7546	excat_without_belong	常熟	
+48	清	嘉善	浙江		7622	exact_with_belong	嘉善	浙江省
+49	清	長寄				unknown		
+50	清	歙縣			7755	excat_without_belong	歙縣	
+51	清	河南			8072	partial_without_belong	河南省	
+52	清	餘姚			7688	excat_without_belong	餘姚	
+53	清	吳縣			7539	excat_without_belong	吳縣	
+54	清	金壇			7553	excat_without_belong	金壇	
+55	清	江南			20207	partial_without_belong	江南蘇松常鎮太道	
+56	清	三韓				unknown		
+57	清	漢陽			8208	excat_without_belong	漢陽	
+58	清	蕪湖			7742	excat_without_belong	蕪湖	
+59	清	海陽			8445	excat_without_belong	海陽	
+60	清	休寧			7756	excat_without_belong	休寧	
+61	清	潛山			7705	excat_without_belong	潛山	
+62	清	穎州				unknown		
+63	清	江寧			7557	excat_without_belong	江寧	
+64	清	吳門				unknown		
+65	清	十三				unknown		
+66	清	新會			8397	excat_without_belong	新會	
+67	清	建安			7789	excat_without_belong	建安	
+68	清	新安			7264	excat_without_belong	新安	
+69	清	錢塘			7602	excat_without_belong	錢塘	
+70	清	如皋			7567	excat_without_belong	如皋	
+71	清	山陽			7580	excat_without_belong	山陽	
+72	清	松江			7514	partial_without_belong	松江府	
+73	清	祁門			7757	excat_without_belong	祁門	
+74	清	金陵				unknown		
+75	清	侯官			7771	excat_without_belong	侯官	
+76	清	崑山			7544	excat_without_belong	崑山	
+77	清	北京				unknown		
+78	清	繁昌			7743	excat_without_belong	繁昌	
+79	清	福建			7768	partial_without_belong	福建省	
+80	清	徽州			7754	partial_without_belong	徽州府	
+81	清	仁和			7603	excat_without_belong	仁和	
+82	清	江陵			8264	excat_without_belong	江陵	
+83	清	黃山				unknown		
+84	清	古歙				unknown		
+85	清	杭			20103	partial_without_belong	浙汕杭嘉湖道	
+86	清	四明				unknown		
+87	清	莆田			7848	excat_without_belong	莆田	
+88	清	嘉定			7528	excat_without_belong	嘉定	
+89	清	虞山				unknown		
+90	清	長洲			7540	excat_without_belong	長洲	
+91	清	萊陽			8067	excat_without_belong	萊陽	
+92	清	吳			7252	partial_without_belong	吳橋	
+93	清	會稽			7685	excat_without_belong	會稽	
+94	清	金陵				unknown		
+95	清	虎林			6988	partial_without_belong	虎林直隸廳	
+96	清	家秣陵				unknown		
+97	清	秣陵				unknown		
+98	清	緜亭				unknown		
+99	清	歙			7755	partial_without_belong	歙縣	
+100	清	紹興			7684	partial_without_belong	紹興府	
+101	清	錢塘			7602	excat_without_belong	錢塘	
+102	清	張堰				unknown		
+103	清	雲閒				unknown		
+104	清	鄞			7628	partial_without_belong	鄞縣	
+105	清	海鹽			7626	excat_without_belong	海鹽	
+106	清	商邱				unknown		
+107	清	臨汾			7455	excat_without_belong	臨汾	
+108	清	寧都			7928	partial_without_belong	寧都直隸州直轄地方	
+109	清	宣城			7745	excat_without_belong	宣城	
+110	清	直塘				unknown		
+111	清	蕭山			7689	excat_without_belong	蕭山	
+112	清	樂淸				unknown		
+113	清	湖州			7611	partial_without_belong	湖州府	
+114	清	秀水			7621	excat_without_belong	秀水	
+115	清	杭州			7601	partial_without_belong	杭州府	
+116	清	虎林			6988	partial_without_belong	虎林直隸廳	
+117	清	丹徒			7551	excat_without_belong	丹徒	
+118	清	武進			7530	excat_without_belong	武進	
+119	清	婁縣			7516	excat_without_belong	婁縣	
+120	清	葢州				unknown		
+121	清	鹿山				unknown		
+122	清	雄縣			7265	excat_without_belong	雄縣	
+123	清	順天			7211	partial_without_belong	順天府	
+124	清	金溪				unknown		
+125	清	平湖			7623	excat_without_belong	平湖	
+126	清	洞庭				unknown		
+127	清	上海			7517	excat_without_belong	上海	
+128	清	臨淸				unknown		
+129	清	譽門				unknown		
+130	清	南通州			7215	partial_without_belong_dangerous	通州	
+131	清	豐潤			7384	excat_without_belong	豐潤	
+132	清	綆陽				unknown		
+133	清	揚州			7569	partial_without_belong	揚州府	
+134	清	興化			7574	excat_without_belong	興化	
+135	清	江都			7570	excat_without_belong	江都	
+136	清	嘉善			7622	excat_without_belong	嘉善	
+137	清	巴陵			8343	excat_without_belong	巴陵	
+138	清	湘潭			8300	excat_without_belong	湘潭	
+139	清	靑浦				unknown		
+140	清	石門			7624	excat_without_belong	石門	
+141	清	慈谿				unknown		
+142	清	甘泉			7571	excat_without_belong	甘泉	
+143	清	舒城	廬州		7699	exact_with_belong	舒城	廬州府
+144	清	廣德州			7752	partial_without_belong	廣德直隸州直轄地方	
+145	清	城西				unknown		
+146	清	滿洲			20050	partial_without_belong	滿洲正黃旗	
+147	清	同里				unknown		
+148	清	嘉定			7528	excat_without_belong	嘉定	
+149	清	婁東				unknown		
+150	清	吳			7252	partial_without_belong	吳橋	
+151	清	苕溪				unknown		
+152	清	衢州			7653	partial_without_belong	衢州府	
+153	清	淮安			7579	partial_without_belong	淮安府	
+154	清	滿洲			20050	partial_without_belong	滿洲正黃旗	
+155	清	襄平				unknown		
+156	清	武林				unknown		
+157	清	桐鄕				unknown		
+158	清	太康			8106	excat_without_belong	太康	
+159	清	西域				unknown		
+160	清	芷江			20648	excat_without_belong	芷江	
+161	清	爐圖				unknown		
+162	清	法凡				unknown		
+163	清	天都				unknown		
+164	清	巖鎮				unknown		
+165	清	大名			7343	excat_without_belong	大名	
+166	清	三原			8945	excat_without_belong	三原	
+167	清	蘇州			7538	partial_without_belong	蘇州府	
+168	清	滿洲			20050	partial_without_belong	滿洲正黃旗	
+169	清	輕與				unknown		
+170	清	太平			7641	excat_without_belong	太平	
+171	清	芰荷潭				unknown		
+172	清	上海			7517	excat_without_belong	上海	
+173	清	濟寧			8009	partial_without_belong	濟寧直隸州直轄地方	
+174	清	江西			7850	partial_without_belong	江西省	
+175	清	綏德			8986	partial_without_belong	綏德直隸州直轄地方	
+176	清	遼陽			7095	partial_without_belong	遼陽州	
+177	清	景州			7254	excat_without_belong	景州	
+178	清	寧化			7813	excat_without_belong	寧化	
+179	清	陵川			7432	excat_without_belong	陵川	
+180	清	沁水			7430	excat_without_belong	沁水	
+181	清	太和			7716	excat_without_belong	太和	
+182	清	荆州				unknown		
+183	清	沔陽州				unknown		
+184	清	天津			7242	excat_without_belong	天津	
+185	清	保定			7235	excat_without_belong	保定	
+186	清	松城				unknown		
+187	清	歸安			7613	excat_without_belong	歸安	
+188	清	嘉興			7620	excat_without_belong	嘉興	
+189	清	嘉善			7622	excat_without_belong	嘉善	
+190	清	婁東				unknown		
+191	清	無錫			7534	excat_without_belong	無錫	
+192	清	新安			7264	excat_without_belong	新安	
+193	清	湘鄕				unknown		
+194	清	休寧			7756	excat_without_belong	休寧	
+195	清	閭陽				unknown		
+196	清	占籍浙江			7599	partial_without_belong	浙江省	
+197	清	襄平				unknown		
+198	清	柘城			8101	excat_without_belong	柘城	
+199	清	鳳陽			7724	excat_without_belong	鳳陽	
+200	清	上元			7558	excat_without_belong	上元	
+201	清	富陽			7606	excat_without_belong	富陽	
+202	清	奉新			7856	excat_without_belong	奉新	
+203	清	直隸			7708	partial_without_belong	六安州直隸州直轄地方	
+204	清	江南			20207	partial_without_belong	江南蘇松常鎮太道	
+205	清	錢塘			7602	excat_without_belong	錢塘	
+206	清	江北			8786	partial_without_belong	江北廳	
+207	清	江陰			7533	excat_without_belong	江陰	
+208	清	蜀				unknown		
+209	清	大興			7213	excat_without_belong	大興	
+210	清	永嘉			7678	excat_without_belong	永嘉	
+211	清	大康				unknown		
+212	清	新安			7264	excat_without_belong	新安	
+213	清	雎州				unknown		
+214	清	家江陵			8264	partial_without_belong_dangerous	江陵	
+215	清	江陵			8264	excat_without_belong	江陵	
+216	清	吳興				unknown		
+217	清	平江			8345	excat_without_belong	平江	
+218	清	休寧			7756	excat_without_belong	休寧	
+219	清	花涇				unknown		
+220	清	潮陽			8447	excat_without_belong	潮陽	
+221	清	得前				unknown		
+222	清	烏江				unknown		
+223	清	歴城	山東			unknown		
+224	清	婺源			7760	excat_without_belong	婺源	
+225	清	上虞			7687	excat_without_belong	上虞	
+226	清	嘉興			7620	excat_without_belong	嘉興	
+227	清	華亭			7515	excat_without_belong	華亭	
+228	清	汀州			7808	partial_without_belong	汀州府	
+229	清	閩漳州			7821	partial_without_belong_dangerous	漳州府	
+230	清	天都				unknown		
+231	清	上虞			7687	excat_without_belong	上虞	
+232	清	揚州			7569	partial_without_belong	揚州府	
+233	清	其畫				unknown		
+234	清	山水				unknown		
+235	清	海昌				unknown		
+236	清	璉市				unknown		
+237	清	干溪				unknown		
+238	清	寧州			20632	excat_without_belong	寧州	
+239	清	武陵			8351	excat_without_belong	武陵	
+240	清	郭杭				unknown		
+241	清	江淮				unknown		
+242	清	集名				unknown		
+243	清	南昌			7852	excat_without_belong	南昌	
+244	清	宋元				unknown		
+245	清	向他				unknown		
+246	清	潘墊				unknown		
+247	清	漢口				unknown		
+248	清	畫元				unknown		
+249	清	松江			7514	partial_without_belong	松江府	
+250	清	雲南			7206	excat_without_belong	雲南	
+251	清	何許				unknown		
+252	清	華道				unknown		
+253	清	嚴老				unknown		
+254	清	微上				unknown		
+255	清	平湖			7623	excat_without_belong	平湖	
+256	清	桐城			7706	excat_without_belong	桐城	
+257	清	晉			7154	partial_without_belong	晉寧州	
+258	清	義烏			20020	excat_without_belong	義烏	
+259	清	浦江			7652	excat_without_belong	浦江	
+260	清	石城			7929	excat_without_belong	石城	
+261	清	吳郡				unknown		
+262	清	當塗			7741	excat_without_belong	當塗	
+263	清	吳江	江蘇		7542	exact_with_belong	吳江	江蘇省
+264	清	虞縣				unknown		
+265	清	金華			7646	excat_without_belong	金華	
+266	清	金山			7519	excat_without_belong	金山	
+267	清	山陰			7686	excat_without_belong	山陰	
+268	清	嘉定			7528	excat_without_belong	嘉定	
+269	清	歴城				unknown		
+270	清	順德	廣東		8388	exact_with_belong	順德	廣東省
+271	清	辟疆姬				unknown		
+272	清	崑山			7544	excat_without_belong	崑山	
+273	清	蘭溪	浙江		20021	exact_with_belong	蘭溪	浙江省

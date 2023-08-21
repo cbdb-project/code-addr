@@ -1,0 +1,10 @@
+1	清	漢軍鑲黃旗		no_info
+2	清	盛京		no_info
+3	清	軍營		no_info
+4	清	正藍旗		no_info
+5	清	湖南		no_info
+6	清	河南		no_info
+7	清	四川		no_info
+8	清	撫州府	江西	no_info
+9	清	南昌府		no_info
+10	清	岳常澧道	湖南	no_info
