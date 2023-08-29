@@ -3,13 +3,14 @@
 
 思路：
 1. 根据地名表ADDRESSES.txt，生成addr_dic[朝代名]=地名列表（按地名长度倒序）
-2. 地名匹配，加地名id：根据group_keywords、addr_dic、cbdb_entity_address_types.csv，
+2. 根据地名类型表cbdb_entity_address_types.csv，生成addr_type_list[]一维数组
+3. 地名匹配，加地名id：根据group_keywords、addr_dic、addr_type_list，
 将input.txt中的地名加上地名id、匹配类型，输出为output.txt
 
 地名匹配规则：
 1. 按优先级group_keywords顺序匹配
 2. 按addr_dic从右往左匹配
-3. 对于在规则2中没有匹配到的，从右往左按cbdb_entity_address_types.csv进行分隔，然后再按规则2匹配
+3. 对于在规则2中没有匹配到的，从右往左按addr_type_list进行分隔，然后再按规则2匹配
 
 注意：
 ADDRESSES.txt中朝代一般在最后一列，但在哪一列不确定，因为地名层级不同
