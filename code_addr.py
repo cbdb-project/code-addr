@@ -83,6 +83,11 @@ class FileOperation:
                     output_dic[dy] = [row]
                 else:
                     output_dic[dy].append(row)
+        # 排序 add xiujunhan 2023-08-29
+        for dy, row in output_dic.items():
+            output_dic[dy] = sorted(output_dic[dy],
+                                    key=lambda x: (-len(x[cbdb_addr_name_index]), -len(x[cbdb_addr_x_index])))
+
         return output_dic
 
     @staticmethod
@@ -137,8 +142,7 @@ def code_data(data_list, addr_dic, current_group_keywords, group_keywords, addr_
         if counter % 10 == 0:
             print(str(counter) + "/" + str(data_list_len) + " done.")
         if addr_dy in addr_dic:
-            for addresses_item in sorted(addr_dic[addr_dy],
-                                         key=lambda x: (-len(x[cbdb_addr_name_index]), -len(x[cbdb_addr_x_index]))):
+            for addresses_item in addr_dic[addr_dy]:
                 addresses_item_name_chn = addresses_item[cbdb_addr_name_index]
                 addresses_item_name_id = addresses_item[cbdb_addr_id_index]
                 addresses_addr_id = addresses_item_name_id
@@ -275,7 +279,7 @@ def merge_coded_groups(data_list_coded, data_list_coded_groups):
 
 read_file_class = FileOperation()
 addr_dic = FileOperation.read_addresses("ADDRESSES.txt")
-data_list = FileOperation.read_input("input.txt")
+data_list = FileOperation.read_input("input_small.txt")
 group_keywords = ["None", "衛"]
 group_list = create_input_groups(data_list, group_keywords)
 addr_type_list = FileOperation.read_input("cbdb_entity_address_types.csv")
@@ -289,5 +293,5 @@ for group_idx in range(len(group_keywords)):
 data_list_coded = copy.deepcopy(data_list_coded_groups[0])
 if len(data_list_coded_groups) > 1:
     data_list_coded = merge_coded_groups(data_list_coded, data_list_coded_groups)
-FileOperation.write_data("output.txt", data_list_coded)
+FileOperation.write_data("output2.txt", data_list_coded)
 print("done")
