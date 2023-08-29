@@ -1,14 +1,32 @@
+"""
+给朝代的地名加地名id
+
+思路：
+1. 根据地名表ADDRESSES.txt，生成addr_dic[朝代名]=地名列表（按地名长度倒序）
+2. 地名匹配，加地名id：根据group_keywords、addr_dic、cbdb_entity_address_types.csv，
+将input.txt中的地名加上地名id、匹配类型，输出为output.txt
+
+地名匹配规则：
+1. 按优先级group_keywords顺序匹配
+2. 按addr_dic从右往左匹配
+3. 对于在规则2中没有匹配到的，从右往左按cbdb_entity_address_types.csv进行分隔，然后再按规则2匹配
+
+注意：
+ADDRESSES.txt中朝代一般在最后一列，但在哪一列不确定，因为地名层级不同
+
+"""
+
 import csv
 import copy
 import re
 
 # define ADDRESSES table index
-cbdb_addr_id_index = 0
-cbdb_addr_name_index = 3
-cbdb_addr_fy_index = 5
-cbdb_addr_ly_index = 6
-cbdb_addr_x_index = 7
-cbdb_addr_y_index = 8
+cbdb_addr_id_index = 0  # 地名id
+cbdb_addr_name_index = 3  # 地名
+cbdb_addr_fy_index = 5  # 地名开始时间，first year
+cbdb_addr_ly_index = 6  # 地名结束时间，last year
+cbdb_addr_x_index = 7  # 地名纬度
+cbdb_addr_y_index = 8  # 地名经度
 
 
 def detect_dy_in_addresses(data):
@@ -162,7 +180,7 @@ def code_data(data_list, addr_dic, current_group_keywords, group_keywords, addr_
                             [addresses_addr_id, "exact_with_belong", addresses_item_name_chn, matched_term])
                     elif addr_name != addresses_item_name_chn and matched_term != "" and (
                             addr_name.find(addresses_item_name_chn) == 1 or addresses_item_name_chn.find(
-                            addr_name) == 1):
+                        addr_name) == 1):
                         partial_with_belong_match_list.append(
                             [addresses_addr_id, "partial_with_belong_dangerous", addresses_item_name_chn, matched_term])
                     elif addr_name != addresses_item_name_chn and matched_term != "":
@@ -193,7 +211,7 @@ def code_data(data_list, addr_dic, current_group_keywords, group_keywords, addr_
                             matched_term = match_belongs_info(addresses_item_belong_list, addr_belong)
                             if matched_term != "" and (addr_name_short.find(
                                     addresses_item_name_chn_short) == 1 or addresses_item_name_chn_short.find(
-                                    addr_name_short) == 1):
+                                addr_name_short) == 1):
                                 partial_with_belong_match_list.append(
                                     [addresses_addr_id, "partial_with_belong_dangerous", addresses_item_name_chn,
                                      matched_term])
@@ -202,7 +220,7 @@ def code_data(data_list, addr_dic, current_group_keywords, group_keywords, addr_
                                     [addresses_addr_id, "partial_with_belong", addresses_item_name_chn, matched_term])
                             elif addr_name_short.find(
                                     addresses_item_name_chn_short) == 1 or addresses_item_name_chn_short.find(
-                                    addr_name_short) == 1:
+                                addr_name_short) == 1:
                                 partial_without_belong_match_list.append(
                                     [addresses_addr_id, "partial_without_belong_dangerous", addresses_item_name_chn,
                                      matched_term])
