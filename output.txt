@@ -1,3 +1,4 @@
+id	dy	addr_name	addr_belong	time	cbdb_id	match_type	cbdb_addr_name	cbdb_belong
 1	清	太倉			7524	partial_without_belong	太倉直隸州直轄地方	
 2	清	孝感			8213	excat_without_belong	孝感	
 3	清	孟津			8193	excat_without_belong	孟津	
