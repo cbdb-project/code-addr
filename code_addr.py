@@ -409,8 +409,11 @@ if use_char_converter:
 
     converter = CharConverter("v2s")
 
+skip_admin_unit_list = ["Yi", "Pu", "Zhixiadifang"]
+
 read_file_class = FileOperation()
 address_df = pd.read_excel("ZZZ_ADDRESSES.xlsx")
+address_df = address_df[~address_df["c_admin_type"].isin(skip_admin_unit_list)]
 address_df.to_csv("ADDRESSES.txt", sep="\t", index=False, encoding="utf-8")
 addr_dic = FileOperation.read_addresses("ADDRESSES.txt")
 data_list = FileOperation.read_input("input.txt")
