@@ -409,7 +409,7 @@ if use_char_converter:
 
     converter = CharConverter("v2s")
 
-skip_admin_unit_list = ["Yi", "Pu", "Zhixiadifang"]
+skip_admin_unit_list = ["Yi", "Pu", "Zhixiadifang", "Du", "Gang", "Jin"]
 
 read_file_class = FileOperation()
 address_df = pd.read_excel("ZZZ_ADDRESSES.xlsx")
