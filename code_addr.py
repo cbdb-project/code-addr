@@ -20,6 +20,9 @@ ADDRESSES.txt中朝代一般在最后一列，但在哪一列不确定，因为�
 import csv
 import copy
 import re
+import pandas as pd
+
+# pip install char-converter
 
 # define ADDRESSES table index
 cbdb_addr_id_index = 0  # 地名id
@@ -69,6 +72,9 @@ class FileOperation:
             csv_reader = csv.reader(f, delimiter="\t")
             counter = 1
             for row in csv_reader:
+                if use_char_converter:
+                    row = [converter.convert(i) for i in row]
+
                 # skip 只有一个字的地址名，以及 skip 地址名为空的记录
                 if len(row[cbdb_addr_id_index]) <= 1:
                     continue
@@ -79,7 +85,9 @@ class FileOperation:
                             capture_belongs_index_list.append(index)
                 counter += 1
                 dy = detect_dy_in_addresses(row)
-                row = add_belong_name_list_to_addresses_list(row, capture_belongs_index_list)
+                row = add_belong_name_list_to_addresses_list(
+                    row, capture_belongs_index_list
+                )
                 if dy not in output_dic:
                     output_dic[dy] = [row]
                 else:
@@ -97,12 +105,25 @@ class FileOperation:
         with open(file_name, "r", encoding="utf-8") as f:
             csv_reader = csv.reader(f, delimiter="\t")
             for row in csv_reader:
+                if use_char_converter:
+                    row = [converter.convert(i) for i in row]
                 output.append(row)
         return output
 
     @staticmethod
     def write_data(file_name, data_list_coded):
-        output = ""
+        header = [
+            "id",
+            "dy",
+            "addr_name",
+            "addr_belong",
+            "time",
+            "cbdb_id",
+            "match_type",
+            "cbdb_addr_name",
+            "cbdb_belong",
+        ]
+        output = "\t".join(header) + "\n"
         for i in data_list_coded:
             output += "\t".join(i) + "\n"
         with open(file_name, "w", encoding="utf-8") as f:
@@ -117,12 +138,12 @@ def match_belongs_info(addr_list, addr_name):
             return addr_in_addrlist
     return ""
 
-
 def rstrip_word(string, word):
     return re.sub(f'{word}$', '', string)
 
 
 def code_data(data_list, addr_dic, current_group_keywords, group_keywords, addr_type_list):
+
     output = []
     counter = 0
     data_list_len = len(data_list)
@@ -134,7 +155,8 @@ def code_data(data_list, addr_dic, current_group_keywords, group_keywords, addr_
         addr_name = line[2]
         addr_belong = line[3]
         addr_time = line[4]
-        if addr_time == "no_info": addr_time = ""
+        if addr_time == "no_info":
+            addr_time = ""
         exact_with_belong_match_list = []
         partial_with_belong_match_list = []
         excat_without_belong_match_list = []
@@ -143,7 +165,13 @@ def code_data(data_list, addr_dic, current_group_keywords, group_keywords, addr_
         if counter % 10 == 0:
             print(str(counter) + "/" + str(data_list_len) + " done.")
         if addr_dy in addr_dic:
-            for addresses_item in addr_dic[addr_dy]:
+            for addresses_item in sorted(
+                addr_dic[addr_dy],
+                key=lambda x: (
+                    -len(x[cbdb_addr_name_index]),
+                    -len(x[cbdb_addr_x_index]),
+                ),
+            ):
                 addresses_item_name_chn = addresses_item[cbdb_addr_name_index]
                 addresses_item_name_id = addresses_item[cbdb_addr_id_index]
                 addresses_addr_id = addresses_item_name_id
@@ -156,16 +184,19 @@ def code_data(data_list, addr_dic, current_group_keywords, group_keywords, addr_
                 if current_group_keywords == "None":
                     for keyword in group_keywords_for_code_data:
                         if len(addresses_item_name_chn) >= len(keyword):
-                            if addresses_item_name_chn[-len(keyword):] == keyword:
+                            if addresses_item_name_chn[-len(keyword) :] == keyword:
                                 break_token = 1
                                 break
                         if len(addr_name) >= len(keyword):
-                            if addr_name[-len(keyword):] == keyword:
+                            if addr_name[-len(keyword) :] == keyword:
                                 break_token = 1
                                 break
                 else:
                     if len(addresses_item_name_chn) >= len(current_group_keywords):
-                        if addresses_item_name_chn[-len(current_group_keywords):] != current_group_keywords:
+                        if (
+                            addresses_item_name_chn[-len(current_group_keywords) :]
+                            != current_group_keywords
+                        ):
                             break_token = 1
                 if break_token == 1:
                     continue
@@ -177,6 +208,7 @@ def code_data(data_list, addr_dic, current_group_keywords, group_keywords, addr_
                 if addr_time == "":
                     matched_time = 1
                 # if addresses_item_name_chn in addr_name:
+
                 if (addr_name in addresses_item_name_chn or addresses_item_name_chn in addr_name) and (
                         matched_time == 1):
                     matched_term = match_belongs_info(addresses_item_belong_list, addr_belong)
@@ -202,10 +234,13 @@ def code_data(data_list, addr_dic, current_group_keywords, group_keywords, addr_
                         partial_without_belong_match_list.append(
                             [addresses_addr_id, "partial_without_belong", addresses_item_name_chn, matched_term])
                         # remove the type the address name and try to match again
+
                 else:
                     for addr_type in addr_type_list:
                         addr_name_short = rstrip_word(addr_name, addr_type)
-                        addresses_item_name_chn_short = rstrip_word(addresses_item_name_chn, addr_type)
+                        addresses_item_name_chn_short = rstrip_word(
+                            addresses_item_name_chn, addr_type
+                        )
                         if len(addr_name_short) <= 1:
                             continue
                         if len(addresses_item_name_chn_short) <= 1:
@@ -234,15 +269,39 @@ def code_data(data_list, addr_dic, current_group_keywords, group_keywords, addr_
                                     [addresses_addr_id, "partial_without_belong", addresses_item_name_chn,
                                      matched_term])
         if len(exact_with_belong_match_list) > 0:
-            output.append([addr_id, addr_dy, addr_name, addr_belong, addr_time] + exact_with_belong_match_list[0])
+            output.append(
+                [addr_id, addr_dy, addr_name, addr_belong, addr_time]
+                + exact_with_belong_match_list[0]
+            )
         elif len(partial_with_belong_match_list) > 0:
-            output.append([addr_id, addr_dy, addr_name, addr_belong, addr_time] + partial_with_belong_match_list[0])
+            output.append(
+                [addr_id, addr_dy, addr_name, addr_belong, addr_time]
+                + partial_with_belong_match_list[0]
+            )
         elif len(excat_without_belong_match_list) > 0:
-            output.append([addr_id, addr_dy, addr_name, addr_belong, addr_time] + excat_without_belong_match_list[0])
+            output.append(
+                [addr_id, addr_dy, addr_name, addr_belong, addr_time]
+                + excat_without_belong_match_list[0]
+            )
         elif len(partial_without_belong_match_list) > 0:
-            output.append([addr_id, addr_dy, addr_name, addr_belong, addr_time] + partial_without_belong_match_list[0])
+            output.append(
+                [addr_id, addr_dy, addr_name, addr_belong, addr_time]
+                + partial_without_belong_match_list[0]
+            )
         else:
-            output.append([addr_id, addr_dy, addr_name, addr_belong, addr_time, "", "unknown", "", ""])
+            output.append(
+                [
+                    addr_id,
+                    addr_dy,
+                    addr_name,
+                    addr_belong,
+                    addr_time,
+                    "",
+                    "unknown",
+                    "",
+                    "",
+                ]
+            )
     return output
 
 
@@ -256,7 +315,7 @@ def create_input_groups(data_list, group_keywords):
         current_keyword_list = []
         for line in list(residual_list):
             addr_name = line[2]
-            if addr_name[-len(keyword):] == keyword:
+            if addr_name[-len(keyword) :] == keyword:
                 current_keyword_list.append(line)
                 residual_list.remove(line)
         output.append(current_keyword_list)
@@ -268,7 +327,10 @@ def merge_coded_groups(data_list_coded, data_list_coded_groups):
     data_list_coded_groups = data_list_coded_groups[1:]
     for data_list_coded_group in data_list_coded_groups:
         for line_idx in range(len(data_list_coded_group)):
-            if data_list_coded[line_idx][6] == "unknown" and data_list_coded_group[line_idx][5] != "unknown":
+            if (
+                data_list_coded[line_idx][6] == "unknown"
+                and data_list_coded_group[line_idx][5] != "unknown"
+            ):
                 data_list_coded[line_idx] = data_list_coded_group[line_idx]
     return data_list_coded
 
@@ -278,7 +340,19 @@ def merge_coded_groups(data_list_coded, data_list_coded_groups):
 # 1	宋	甌寧	建州	1279
 # 2	清	江南太平府	no_info	no_info
 
+use_char_converter = False
+# use_char_converter = True
+if use_char_converter:
+    from char_converter import CharConverter
+
+    converter = CharConverter("v2s")
+
+skip_admin_unit_list = ["Yi", "Pu", "Zhixiadifang", "Du", "Gang", "Jin"]
+
 read_file_class = FileOperation()
+address_df = pd.read_excel("ZZZ_ADDRESSES.xlsx")
+address_df = address_df[~address_df["c_admin_type"].isin(skip_admin_unit_list)]
+address_df.to_csv("ADDRESSES.txt", sep="\t", index=False, encoding="utf-8")
 addr_dic = FileOperation.read_addresses("ADDRESSES.txt")
 # data_list = FileOperation.read_input("input.txt")
 data_list = FileOperation.read_input("input_small.txt")    # test
