@@ -27,9 +27,7 @@ code_addr.py
 
 2. **Load your input data**:
 
-Based on this schema
-
-An example of the input schema:
+Based on this schema:
 ```
 id	dy	addr_name	addr_belong	time
 1	宋	甌寧	建州	1279
