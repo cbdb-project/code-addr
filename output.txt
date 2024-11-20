@@ -90,7 +90,7 @@ id	dy	addr_name	addr_belong	time	cbdb_id	match_type	cbdb_addr_name	cbdb_belong
 89	清	虞山				unknown		
 90	清	長洲			7540	excat_without_belong	長洲	
 91	清	萊陽			8067	excat_without_belong	萊陽	
-92	清	吳			701216	partial_without_belong	吳都渡	
+92	清	吳			8425	partial_without_belong	吳川	
 93	清	會稽			7685	excat_without_belong	會稽	
 94	清	金陵				unknown		
 95	清	虎林			6988	partial_without_belong	虎林直隸廳	
@@ -148,7 +148,7 @@ id	dy	addr_name	addr_belong	time	cbdb_id	match_type	cbdb_addr_name	cbdb_belong
 147	清	同里				unknown		
 148	清	嘉定			7528	excat_without_belong	嘉定	
 149	清	婁東				unknown		
-150	清	吳			701216	partial_without_belong	吳都渡	
+150	清	吳			8425	partial_without_belong	吳川	
 151	清	苕溪				unknown		
 152	清	衢州			7653	partial_without_belong	衢州府	
 153	清	淮安			7579	partial_without_belong	淮安府	
@@ -220,7 +220,7 @@ id	dy	addr_name	addr_belong	time	cbdb_id	match_type	cbdb_addr_name	cbdb_belong
 219	清	花涇				unknown		
 220	清	潮陽			8447	excat_without_belong	潮陽	
 221	清	得前				unknown		
-222	清	烏江			701479	partial_without_belong	烏江津	
+222	清	烏江				unknown		
 223	清	歴城	山東			unknown		
 224	清	婺源			7760	excat_without_belong	婺源	
 225	清	上虞			7687	excat_without_belong	上虞	
