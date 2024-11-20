@@ -354,8 +354,8 @@ address_df = pd.read_excel("ZZZ_ADDRESSES.xlsx")
 address_df = address_df[~address_df["c_admin_type"].isin(skip_admin_unit_list)]
 address_df.to_csv("ADDRESSES.txt", sep="\t", index=False, encoding="utf-8")
 addr_dic = FileOperation.read_addresses("ADDRESSES.txt")
-# data_list = FileOperation.read_input("input.txt")
-data_list = FileOperation.read_input("input_small.txt")    # test
+data_list = FileOperation.read_input("input.txt")
+# data_list = FileOperation.read_input("input_small.txt")    # test
 group_keywords = ["None", "衛"]
 group_list = create_input_groups(data_list, group_keywords)
 addr_type_list = FileOperation.read_input("cbdb_entity_address_types.csv")
@@ -369,6 +369,5 @@ for group_idx in range(len(group_keywords)):
 data_list_coded = copy.deepcopy(data_list_coded_groups[0])
 if len(data_list_coded_groups) > 1:
     data_list_coded = merge_coded_groups(data_list_coded, data_list_coded_groups)
-# FileOperation.write_data("output.txt", data_list_coded)
-FileOperation.write_data("output2.txt", data_list_coded)    # test
+FileOperation.write_data("output.txt", data_list_coded)
 print("done")
