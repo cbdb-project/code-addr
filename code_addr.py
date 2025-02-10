@@ -155,6 +155,8 @@ def code_data(data_list, addr_dic, current_group_keywords, group_keywords, addr_
         addr_name = line[2]
         addr_belong = line[3]
         addr_time = line[4]
+        if addr_name == "":
+            addr_name = "地名為空，請檢查！"
         if addr_time == "no_info":
             addr_time = ""
         exact_with_belong_match_list = []
